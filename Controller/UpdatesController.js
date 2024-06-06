@@ -1,7 +1,8 @@
+const { ip } = require("../config/ip");
 const UpdatesModel = require("./../Model/UpdatesModel");
 
 module.exports.addUpdates = async function (req, res) {
-  const BaseUrl = `http://localhost:9999/updates/${req.file.originalname}`;
+  const BaseUrl = `${ip}/updates/${req.file.originalname}`;
   req.body.image = BaseUrl;
 
   let Update = new UpdatesModel({

@@ -1,6 +1,8 @@
+import { ip } from "../../Config/ip";
+
 export const Service = {
   getData() {
-    return fetch("http://localhost:9999/DistrictWiseSportsComplex")
+    return fetch(`${ip}/DistrictWiseSportsComplex`)
       .then((res) => res.json())
       .then((res) => {
         return res.data;
@@ -32,8 +34,6 @@ export const Service = {
           .join("&")
       : "";
 
-    return fetch("http://localhost:9999/getDistrict" + queryParams).then(
-      (res) => res.json()
-    );
+    return fetch(`${ip}/getDistrict` + queryParams).then((res) => res.json());
   },
 };

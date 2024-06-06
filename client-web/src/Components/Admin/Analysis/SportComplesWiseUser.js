@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import ReactApexChart from "react-apexcharts";
+import { ip } from "../../../Config/ip";
 
 const SportsComplexWiseUser = (props) => {
   const [chartData, setChartData] = useState({
@@ -84,7 +85,7 @@ const SportsComplexWiseUser = (props) => {
       redirect: "follow",
     };
 
-    fetch(`http://localhost:9999/atheleteInSportsComplex`, requestOptions)
+    fetch(`${ip}/atheleteInSportsComplex`, requestOptions)
       .then((response) => response.json())
       .then((result) => {
         const data = result.data;

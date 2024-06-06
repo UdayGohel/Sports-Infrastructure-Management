@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import ReactApexChart from "react-apexcharts";
+import { ip } from "../../../../Config/ip";
 
 const EnrollAnalysis = (props) => {
   const [chartData, setChartData] = useState({
@@ -81,7 +82,7 @@ const EnrollAnalysis = (props) => {
     };
 
     fetch(
-      `http://localhost:9999/monthWiseEnroll?sportsComplexId=${props.selectedOption}&sports=${props.sportId}`,
+      `${ip}/monthWiseEnroll?sportsComplexId=${props.selectedOption}&sports=${props.sportId}`,
       requestOptions
     )
       .then((response) => response.json())
@@ -135,7 +136,7 @@ const EnrollAnalysis = (props) => {
   //   };
 
   //   fetch(
-  //     `http://localhost:9999/monthWiseEnroll?sportsComplexId=${props.selectedOption}`,
+  //     `${ip}/monthWiseEnroll?sportsComplexId=${props.selectedOption}`,
   //     requestOptions
   //   )
   //     .then((response) => response.json())

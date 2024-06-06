@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import ReactApexChart from "react-apexcharts";
+import { ip } from "../../../../Config/ip";
 
 const AgeGroupwiseCount = (props) => {
   const [chartData, setChartData] = useState({
@@ -81,7 +82,7 @@ const AgeGroupwiseCount = (props) => {
     };
 
     fetch(
-      `http://localhost:9999/agegrpCount?year=${props.year}&sports=${props.sport}&sportsComplexId=${props.selectedOption}`,
+      `${ip}/agegrpCount?year=${props.year}&sports=${props.sport}&sportsComplexId=${props.selectedOption}`,
       requestOptions
     )
       .then((response) => response.json())

@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
+import { ip } from "../../../Config/ip";
 
 const Profile = () => {
   const AuthorityData = useSelector((state) => state.user.user);
@@ -12,10 +13,7 @@ const Profile = () => {
       redirect: "follow",
     };
 
-    fetch(
-      `http://localhost:9999/getuserwithdistrict?_id=${AuthorityData._id}`,
-      requestOptions
-    )
+    fetch(`${ip}/getuserwithdistrict?_id=${AuthorityData._id}`, requestOptions)
       .then((response) => response.json())
       .then((result) => {
         console.log(result);

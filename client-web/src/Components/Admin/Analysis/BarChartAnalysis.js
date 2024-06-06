@@ -6,6 +6,7 @@ import EnrollAnalysis from "./BarChart/EnrollAnalysis";
 import AgeGroupAnalysis from "./BarChart/AgeGroupAnalysis";
 import AgeGroupwiseCount from "./BarChart/AgeGroupCount";
 import AttendanceAnalysis from "./BarChart/Attendance";
+import { ip } from "../../../Config/ip";
 
 const BarChartAnalysis = () => {
   const [data, setData] = useState([]);
@@ -28,14 +29,14 @@ const BarChartAnalysis = () => {
       redirect: "follow",
     };
 
-    fetch("http://localhost:9999/getSportsComplex", requestOptions)
+    fetch(`${ip}/getSportsComplex`, requestOptions)
       .then((response) => response.json())
       .then((result) => {
         setData(result.data);
       })
       .catch((error) => console.log("error", error));
 
-    fetch("http://localhost:9999/getSports", requestOptions)
+    fetch(`${ip}/getSports`, requestOptions)
       .then((response) => response.json())
       .then((result) => setsports(result.data))
       .catch((error) => console.log("error", error));

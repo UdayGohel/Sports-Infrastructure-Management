@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import ReactApexChart from "react-apexcharts";
+import { ip } from "../../../Config/ip";
 
 const GeneralAnalyis = (props) => {
   console.log("in", props.formdata);
@@ -86,7 +87,7 @@ const GeneralAnalyis = (props) => {
     };
 
     fetch(
-      `http://localhost:9999/sportDetailOfComplex?sportsComplexId=${props.selectedOption}`,
+      `${ip}/sportDetailOfComplex?sportsComplexId=${props.selectedOption}`,
       requestOptions
     )
       .then((response) => response.json())
@@ -122,9 +123,7 @@ const GeneralAnalyis = (props) => {
         type="bar"
         height={chartData.options.chart.height}
       />
-      
     </div>
-    
   );
 };
 

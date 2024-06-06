@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import TopSportwiseComplex from "./Top/TopSportwiseComplex";
 import SportComplexTable from "./Top/TopSportComplexTable";
+import { ip } from "../../../Config/ip";
 const Topboard = () => {
   const [districtId, setdistrictId] = useState("");
   const [sportId, setsportId] = useState("");
@@ -13,12 +14,12 @@ const Topboard = () => {
       redirect: "follow",
     };
 
-    fetch("http://localhost:9999/getSports", requestOptions)
+    fetch(`${ip}/getSports`, requestOptions)
       .then((response) => response.json())
       .then((result) => setsports(result.data))
       .catch((error) => console.log("error", error));
 
-    fetch("http://localhost:9999/getDistrict", requestOptions)
+    fetch(`${ip}/getDistrict`, requestOptions)
       .then((response) => response.json())
       .then((result) => setDistrict(result.data))
       .catch((error) => console.log("error", error));

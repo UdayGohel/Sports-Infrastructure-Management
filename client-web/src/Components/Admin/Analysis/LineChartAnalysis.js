@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import EventAnalysis from "./Line/EventAnalysis";
 import EnrollLineAnalysis from "./Line/EnrollLineAnalysis";
 import ComplaintLineAnalysis from "./Line/ComplaintLine";
+import { ip } from "../../../Config/ip";
 
 const LineChartAnalysis = () => {
   const [selectedOption, setSelectedOption] = useState("");
@@ -13,7 +14,7 @@ const LineChartAnalysis = () => {
       redirect: "follow",
     };
 
-    fetch("http://localhost:9999/getSportsComplex", requestOptions)
+    fetch(`${ip}/getSportsComplex`, requestOptions)
       .then((response) => response.json())
       .then((result) => {
         setData(result.data);

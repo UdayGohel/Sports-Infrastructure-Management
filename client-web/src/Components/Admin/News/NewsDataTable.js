@@ -10,6 +10,7 @@ import { Calendar } from "primereact/calendar";
 import { useSelector } from "react-redux";
 import { NewsServices } from "./NewsServices";
 import { useRef } from "react";
+import { ip } from "../../../Config/ip";
 
 export default function NewsDataTable() {
   const { _id } = useSelector((state) => state.user.user);
@@ -131,7 +132,7 @@ export default function NewsDataTable() {
       redirect: "follow",
     };
 
-    fetch(`http://localhost:9999/updateUpdates/${rowdata._id}`, requestOptions)
+    fetch(`${ip}/updateUpdates/${rowdata._id}`, requestOptions)
       .then((response) => response.text())
       .then((result) => {
         Swal.fire({
@@ -160,7 +161,7 @@ export default function NewsDataTable() {
       redirect: "follow",
     };
 
-    fetch(`http://localhost:9999/updateUpdates/${rowdata._id}`, requestOptions)
+    fetch(`${ip}/updateUpdates/${rowdata._id}`, requestOptions)
       .then((response) => response.text())
       .then((result) => {
         Swal.fire({

@@ -1,6 +1,8 @@
+import { ip } from "../../Config/ip";
+
 export const SlotServices = {
   getData(id) {
-    return fetch(`http://localhost:9999/getGuest`)
+    return fetch(`${ip}/getGuest`)
       .then((res) => res.json())
       .then((res) => {
         console.log(res);
@@ -23,18 +25,4 @@ export const SlotServices = {
   getCustomersXLarge(id) {
     return Promise.resolve(this.getData(id));
   },
-
-  //   getCustomers(params) {
-  //     const queryParams = params
-  //       ? Object.keys(params)
-  //           .map(
-  //             (k) => encodeURIComponent(k) + "=" + encodeURIComponent(params[k])
-  //           )
-  //           .join("&")
-  //       : "";
-
-  //     return fetch("http://localhost:9999/getSports" + queryParams).then((res) =>
-  //       res.json()
-  //     );
-  //   },
 };

@@ -1,11 +1,11 @@
-import { useEffect } from "react";
 import { ComplaintTypeActions } from "../store/ComplaintType";
 import { useDispatch } from "react-redux";
+import { ip } from "../Config/ip";
 
 function FetchComplaintType() {
   const dispatch = useDispatch();
   //   useEffect(() => {
-  fetch("http://localhost:9999/getComplaintType")
+  fetch(`${ip}/getComplaintType`)
     .then((response) => response.json())
     .then((result) => {
       console.log(result.data);

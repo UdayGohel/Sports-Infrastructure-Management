@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import ReactApexChart from "react-apexcharts";
 import { useSelector } from "react-redux";
+import { ip } from "../../../Config/ip";
 
 const DistrictChart = (props) => {
   const { DistrictId } = useSelector((state) => state.user.user);
@@ -87,10 +88,7 @@ const DistrictChart = (props) => {
       redirect: "follow",
     };
 
-    fetch(
-      `http://localhost:9999/getSportsCount?districtId=${DistrictId}`,
-      requestOptions
-    )
+    fetch(`${ip}/getSportsCount?districtId=${DistrictId}`, requestOptions)
       .then((response) => response.json())
       .then((result) => {
         const data = result.sportsCount;

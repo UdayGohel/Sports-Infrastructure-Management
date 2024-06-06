@@ -4,6 +4,7 @@ import { useSelector } from "react-redux";
 import EnrollLineAnalysis from "../../Admin/Analysis/Line/EnrollLineAnalysis";
 import EventAnalysis from "../../Admin/Analysis/Line/EventAnalysis";
 import ComplaintLineAnalysis from "../../Admin/Analysis/Line/ComplaintLine";
+import { ip } from "../../../Config/ip";
 
 const AuthorityLineChartAnalysis = () => {
   const [selectedOption, setSelectedOption] = useState("");
@@ -16,10 +17,7 @@ const AuthorityLineChartAnalysis = () => {
       redirect: "follow",
     };
 
-    fetch(
-      `http://localhost:9999/getSportsComplex?district=${DistrictId}`,
-      requestOptions
-    )
+    fetch(`${ip}/getSportsComplex?district=${DistrictId}`, requestOptions)
       .then((response) => response.json())
       .then((result) => {
         setData(result.data);
@@ -32,10 +30,7 @@ const AuthorityLineChartAnalysis = () => {
       redirect: "follow",
     };
 
-    fetch(
-      `http://localhost:9999/getSportsComplex?district=${DistrictId}`,
-      requestOptions
-    )
+    fetch(`${ip}/getSportsComplex?district=${DistrictId}`, requestOptions)
       .then((response) => response.json())
       .then((result) => {
         setData(result.data);

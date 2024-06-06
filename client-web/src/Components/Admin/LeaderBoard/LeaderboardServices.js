@@ -1,6 +1,8 @@
+import { ip } from "../../../Config/ip";
+
 export const LeaderboardServices = {
   getData(id) {
-    return fetch(`http://localhost:9999/getAthletesWithAllRating?sportId=${id}`)
+    return fetch(`${ip}/getAthletesWithAllRating?sportId=${id}`)
       .then((res) => res.json())
       .then((res) => {
         return res.data;
@@ -32,7 +34,7 @@ export const LeaderboardServices = {
   //           .join("&")
   //       : "";
 
-  //     return fetch("http://localhost:9999/getSports" + queryParams).then((res) =>
+  //     return fetch(`${ip}/getSports` + queryParams).then((res) =>
   //       res.json()
   //     );
   //   },

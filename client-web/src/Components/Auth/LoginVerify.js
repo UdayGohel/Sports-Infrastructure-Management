@@ -1,4 +1,5 @@
 import { redirect } from "react-router-dom";
+import { ip } from "../../Config/ip";
 
 const LoginVerify = async () => {
   const token = localStorage.getItem("token");
@@ -16,10 +17,7 @@ const LoginVerify = async () => {
       body: raw,
       redirect: "follow",
     };
-    const response = await fetch(
-      "http://localhost:9999/verify",
-      requestOptions
-    );
+    const response = await fetch(`${ip}/verify`, requestOptions);
     const result = await response.json();
     console.log(result);
     if (result.rcode === 200) {

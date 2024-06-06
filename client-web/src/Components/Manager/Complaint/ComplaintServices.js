@@ -1,8 +1,8 @@
+import { ip } from "../../../Config/ip";
+
 export const ComplaintService = {
   getData(id) {
-    return fetch(
-      `http://localhost:9999/getAllComplaints?sportsComplex=${id}&level=1&status=0`
-    )
+    return fetch(`${ip}/getAllComplaints?sportsComplex=${id}&level=1&status=0`)
       .then((res) => res.json())
       .then((res) => {
         return res.data;
@@ -24,18 +24,4 @@ export const ComplaintService = {
   getCustomersXLarge(id) {
     return Promise.resolve(this.getData(id));
   },
-
-  //   getCustomers(params) {
-  //     const queryParams = params
-  //       ? Object.keys(params)
-  //           .map(
-  //             (k) => encodeURIComponent(k) + "=" + encodeURIComponent(params[k])
-  //           )
-  //           .join("&")
-  //       : "";
-
-  //     return fetch("http://localhost:9999/getSports" + queryParams).then((res) =>
-  //       res.json()
-  //     );
-  //   },
 };

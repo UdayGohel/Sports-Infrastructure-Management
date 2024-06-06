@@ -11,6 +11,7 @@ import { Link } from "react-router-dom";
 import { useCookies } from "react-cookie";
 import { FacilityService } from "./FacilityService";
 import * as XLSX from "xlsx";
+import { ip } from "../../../Config/ip";
 
 export default function FacilityTable() {
   const [deleterefresh, setdeleterefresh] = useState(true);
@@ -41,7 +42,7 @@ export default function FacilityTable() {
           headers: myHeaders,
           redirect: "follow",
         };
-        fetch(`http://localhost:9999/deleteblog/${rowdata._id}`, requestOptions)
+        fetch(`${ip}/deleteblog/${rowdata._id}`, requestOptions)
           .then((response) => response.text())
           .then((result) => {
             setdeleterefresh(!deleterefresh);

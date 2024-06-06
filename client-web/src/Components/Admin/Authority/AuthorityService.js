@@ -1,6 +1,8 @@
+import { ip } from "../../../Config/ip";
+
 export const AuthorityService = {
   getData() {
-    return fetch("http://localhost:9999/getuserwithdistrict?Role=4")
+    return fetch(`${ip}/getuserwithdistrict?Role=4`)
       .then((res) => res.json())
       .then((res) => {
         return res.data;
@@ -32,8 +34,8 @@ export const AuthorityService = {
           .join("&")
       : "";
 
-    return fetch("http://localhost:9999/getuser?Role=4" + queryParams).then(
-      (res) => res.json()
+    return fetch(`${ip}/getuser?Role=4` + queryParams).then((res) =>
+      res.json()
     );
   },
 };

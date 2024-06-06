@@ -7,6 +7,7 @@ import EnrollAnalysis from "../../Admin/Analysis/BarChart/EnrollAnalysis";
 import AgeGroupAnalysis from "../../Admin/Analysis/BarChart/AgeGroupAnalysis";
 import AgeGroupwiseCount from "../../Admin/Analysis/BarChart/AgeGroupCount";
 import AttendanceAnalysis from "../../Admin/Analysis/BarChart/Attendance";
+import { ip } from "../../../Config/ip";
 const ManagaerBarChartAnalysis = () => {
   const [sport, setsports] = useState([]);
   const [selectedOption, setSelectedOption] = useState("");
@@ -29,7 +30,7 @@ const ManagaerBarChartAnalysis = () => {
       redirect: "follow",
     };
 
-    fetch("http://localhost:9999/getSports", requestOptions)
+    fetch(`${ip}/getSports`, requestOptions)
       .then((response) => response.json())
       .then((result) => setsports(result.data))
       .catch((error) => console.log("error", error));

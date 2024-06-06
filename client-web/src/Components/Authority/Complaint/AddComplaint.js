@@ -4,6 +4,7 @@ import { compalintSchemas } from "../../../Schemas";
 import { useSelector } from "react-redux";
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
+import { ip } from "../../../Config/ip";
 const initialValues = {
   type: "",
   description: "",
@@ -34,7 +35,7 @@ const AddComplaint = () => {
       redirect: "follow",
     };
 
-    fetch("http://localhost:9999/addComplaint", requestOptions)
+    fetch(`${ip}/addComplaint`, requestOptions)
       .then((response) => response.text())
       .then((result) => {
         Swal.fire({

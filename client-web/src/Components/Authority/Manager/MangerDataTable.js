@@ -11,6 +11,7 @@ import { useSelector } from "react-redux/es/hooks/useSelector";
 import { Link } from "react-router-dom";
 import { ManagerService } from "./ManagerService";
 import { useCookies } from "react-cookie";
+import { ip } from "../../../Config/ip";
 
 export default function ManagerDateTable() {
   const [deleterefresh, setdeleterefresh] = useState(true);
@@ -45,7 +46,7 @@ export default function ManagerDateTable() {
           headers: myHeaders,
           redirect: "follow",
         };
-        fetch(`http://localhost:9999/deleteblog/${rowdata._id}`, requestOptions)
+        fetch(`${ip}/deleteblog/${rowdata._id}`, requestOptions)
           .then((response) => response.text())
           .then((result) => {
             setdeleterefresh(!deleterefresh);

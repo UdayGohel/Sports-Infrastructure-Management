@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import ReactApexChart from "react-apexcharts";
+import { ip } from "../../../../Config/ip";
 
 const EventAnalysis = (props) => {
   const [chartData, setChartData] = useState({
@@ -75,7 +76,7 @@ const EventAnalysis = (props) => {
       };
 
       fetch(
-        `http://localhost:9999/attendanceSportWise?sportscomplex=${props.selectedOption}&from=${props.fromdate}&to=${props.todate}`,
+        `${ip}/attendanceSportWise?sportscomplex=${props.selectedOption}&from=${props.fromdate}&to=${props.todate}`,
         requestOptions
       )
         .then((response) => response.json())

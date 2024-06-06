@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import LeaderboardDataTable from "./LeaderBoardDataTable";
+import { ip } from "../../../Config/ip";
 
 const Leaderboard = () => {
   const [data, setData] = useState([]);
@@ -11,7 +12,7 @@ const Leaderboard = () => {
       redirect: "follow",
     };
 
-    fetch("http://localhost:9999/getSports", requestOptions)
+    fetch(`${ip}/getSports`, requestOptions)
       .then((response) => response.json())
       .then((result) => {
         setData(result.data);

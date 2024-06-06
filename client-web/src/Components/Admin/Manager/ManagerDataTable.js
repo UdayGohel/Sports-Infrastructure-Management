@@ -10,6 +10,7 @@ import { Calendar } from "primereact/calendar";
 import { Link } from "react-router-dom";
 import { useCookies } from "react-cookie";
 import { ManagerService } from "./ManagerService";
+import { ip } from "../../../Config/ip";
 export default function ManagerDataTable() {
   const [deleterefresh, setdeleterefresh] = useState(true);
   const [customers, setCustomers] = useState(null);
@@ -41,7 +42,7 @@ export default function ManagerDataTable() {
           headers: myHeaders,
           redirect: "follow",
         };
-        fetch(`http://localhost:9999/deleteblog/${rowdata._id}`, requestOptions)
+        fetch(`${ip}/deleteblog/${rowdata._id}`, requestOptions)
           .then((response) => response.text())
           .then((result) => {
             setdeleterefresh(!deleterefresh);

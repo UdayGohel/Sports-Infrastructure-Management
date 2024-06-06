@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import ReactApexChart from "react-apexcharts";
+import { ip } from "../../../../Config/ip";
 
 const AgeGroupAnalysis = (props) => {
   const [chartData, setChartData] = useState({
@@ -81,7 +82,7 @@ const AgeGroupAnalysis = (props) => {
     };
 
     fetch(
-      `http://localhost:9999/agewiseSportCount?minage=${props.minAge}&maxage=${props.maxAge}&sportsComplexId=${props.selectedOption}`,
+      `${ip}/agewiseSportCount?minage=${props.minAge}&maxage=${props.maxAge}&sportsComplexId=${props.selectedOption}`,
       requestOptions
     )
       .then((response) => response.json())

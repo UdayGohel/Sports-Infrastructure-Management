@@ -1,6 +1,6 @@
 export const ManagerService = {
   getData() {
-    return fetch("http://localhost:9999/getuserwithsportscomplex?Role=3")
+    return fetch(`${ip}/getuserwithsportscomplex?Role=3`)
       .then((res) => res.json())
       .then((res) => {
         return res.data;
@@ -32,8 +32,8 @@ export const ManagerService = {
           .join("&")
       : "";
 
-    return fetch("http://localhost:9999/getuser?Role=4" + queryParams).then(
-      (res) => res.json()
+    return fetch(`${ip}/getuser?Role=4` + queryParams).then((res) =>
+      res.json()
     );
   },
 };

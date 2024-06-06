@@ -1,6 +1,8 @@
+import { ip } from "../../../Config/ip";
+
 export const SportComplexService = {
   getData() {
-    return fetch("http://localhost:9999/getSportsComplexwithdistrict")
+    return fetch(`${ip}/getSportsComplexwithdistrict`)
       .then((res) => res.json())
       .then((res) => {
         return res.data;
@@ -32,8 +34,8 @@ export const SportComplexService = {
           .join("&")
       : "";
 
-    return fetch("http://localhost:9999/getSportsComplex" + queryParams).then(
-      (res) => res.json()
+    return fetch(`${ip}/getSportsComplex` + queryParams).then((res) =>
+      res.json()
     );
   },
 };

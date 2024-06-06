@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import QRCode from "qrcode";
 import { useSelector } from "react-redux";
+import { ip } from "../../Config/ip";
 const Profile = () => {
   const AuthorityData = useSelector((state) => state.user.user);
   const [lodaer, setloader] = useState(false);
@@ -51,7 +52,7 @@ const Profile = () => {
     };
 
     fetch(
-      `http://localhost:9999/getuserwithsportscomplex?_id=${AuthorityData._id}`,
+      `${ip}/getuserwithsportscomplex?_id=${AuthorityData._id}`,
       requestOptions
     )
       .then((response) => response.json())

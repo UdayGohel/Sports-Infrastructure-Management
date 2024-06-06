@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { ip } from "../../../../Config/ip";
 
 const SportComplexTable = ({ districtId }) => {
   const [sportComplexes, setSportComplexes] = useState([]);
@@ -8,7 +9,7 @@ const SportComplexTable = ({ districtId }) => {
       redirect: "follow",
     };
 
-    fetch(`http://localhost:9999/rating?district=${districtId}`, requestOptions)
+    fetch(`${ip}/rating?district=${districtId}`, requestOptions)
       .then((response) => response.json())
       .then((result) => {
         // console.log(result);

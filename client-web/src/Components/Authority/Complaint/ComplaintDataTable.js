@@ -10,6 +10,7 @@ import { Calendar } from "primereact/calendar";
 import { useSelector } from "react-redux";
 
 import { AuthorityComplaintService } from "./ComplaintServices";
+import { ip } from "../../../Config/ip";
 
 export default function AthorityComplaintDataTable() {
   const { DistrictId, _id } = useSelector((state) => state.user.user);
@@ -134,10 +135,7 @@ export default function AthorityComplaintDataTable() {
       redirect: "follow",
     };
 
-    fetch(
-      `http://localhost:9999/updateComplaint/${rowdata._id}`,
-      requestOptions
-    )
+    fetch(`${ip}/updateComplaint/${rowdata._id}`, requestOptions)
       .then((response) => response.json())
       .then((result) => {
         // console.log(result);
@@ -169,10 +167,7 @@ export default function AthorityComplaintDataTable() {
       redirect: "follow",
     };
 
-    fetch(
-      `http://localhost:9999/updateComplaint/${rowdata._id}`,
-      requestOptions
-    )
+    fetch(`${ip}/updateComplaint/${rowdata._id}`, requestOptions)
       .then((response) => response.json())
       .then((result) => {
         // console.log(result);
@@ -334,7 +329,7 @@ export default function AthorityComplaintDataTable() {
             <div className="modal-body p-4 flex justify-center items-center">
               <img
                 key=""
-                src={` http://localhost:9999/complaints/${modalImages}`}
+                src={` ${ip}/complaints/${modalImages}`}
                 alt="Sport Facility Pic"
                 className="w-60 h-60 object-cover mx-2"
               />

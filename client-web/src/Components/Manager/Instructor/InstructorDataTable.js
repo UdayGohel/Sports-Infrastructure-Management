@@ -11,6 +11,7 @@ import { Link } from "react-router-dom";
 import { useCookies } from "react-cookie";
 import { InstructorService } from "./InstructorServices";
 import { useSelector } from "react-redux";
+import { ip } from "../../../Config/ip";
 
 export default function InstructorDataTable() {
   const { _id } = useSelector((state) => state.user.user);
@@ -44,7 +45,7 @@ export default function InstructorDataTable() {
           headers: myHeaders,
           redirect: "follow",
         };
-        fetch(`http://localhost:9999/deleteblog/${rowdata._id}`, requestOptions)
+        fetch(`${ip}/deleteblog/${rowdata._id}`, requestOptions)
           .then((response) => response.text())
           .then((result) => {
             setdeleterefresh(!deleterefresh);

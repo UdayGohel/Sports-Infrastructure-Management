@@ -11,6 +11,7 @@ import { useSelector } from "react-redux/es/hooks/useSelector";
 import { Link } from "react-router-dom";
 import { AuthorityService } from "./AuthorityService";
 import { useCookies } from "react-cookie";
+import { ip } from "../../../Config/ip";
 
 export default function AuthorityTable() {
   const [deleterefresh, setdeleterefresh] = useState(true);
@@ -43,7 +44,7 @@ export default function AuthorityTable() {
           headers: myHeaders,
           redirect: "follow",
         };
-        fetch(`http://localhost:9999/deleteblog/${rowdata._id}`, requestOptions)
+        fetch(`${ip}/deleteblog/${rowdata._id}`, requestOptions)
           .then((response) => response.text())
           .then((result) => {
             setdeleterefresh(!deleterefresh);

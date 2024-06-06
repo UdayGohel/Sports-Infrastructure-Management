@@ -41,7 +41,7 @@ export default function FacilityDataTable() {
   //           headers: myHeaders,
   //           redirect: "follow",
   //         };
-  //         fetch(`http://localhost:9999/deleteblog/${rowdata._id}`, requestOptions)
+  //         fetch(`${ip}/deleteblog/${rowdata._id}`, requestOptions)
   //           .then((response) => response.text())
   //           .then((result) => {
   //             setdeleterefresh(!deleterefresh);
@@ -288,7 +288,12 @@ export default function FacilityDataTable() {
             header="Image"
             style={{ minWidth: "12rem" }}
             body={(rowdata) => (
-              <button onClick={() => openModal(rowdata)} className="text-blue-900 hover:underline hover:decoration-black ">View Images</button>
+              <button
+                onClick={() => openModal(rowdata)}
+                className="text-blue-900 hover:underline hover:decoration-black "
+              >
+                View Images
+              </button>
             )}
           />
         </DataTable>

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { ip } from "../../../../Config/ip";
 
 const TopSportwiseComplex = ({ districtId, sportId }) => {
   const [sportComplexes, setSportComplexes] = useState([]);
@@ -9,7 +10,7 @@ const TopSportwiseComplex = ({ districtId, sportId }) => {
     };
 
     fetch(
-      `http://localhost:9999/sportRatingWiseTop5?sportId=${sportId}&district=${districtId}`,
+      `${ip}/sportRatingWiseTop5?sportId=${sportId}&district=${districtId}`,
       requestOptions
     )
       .then((response) => response.json())

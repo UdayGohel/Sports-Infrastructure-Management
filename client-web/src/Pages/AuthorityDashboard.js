@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useEffect } from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import { ip } from "../Config/ip";
 
 const AuthorityDashboard = () => {
   const { DistrictId } = useSelector((state) => state.user.user);
@@ -14,10 +15,7 @@ const AuthorityDashboard = () => {
       redirect: "follow",
     };
 
-    fetch(
-      `http://localhost:9999/AuthorityDetails?districtId=${DistrictId}`,
-      requestOptions
-    )
+    fetch(`${ip}/AuthorityDetails?districtId=${DistrictId}`, requestOptions)
       .then((response) => response.json())
       .then((result) => {
         console.log(result);

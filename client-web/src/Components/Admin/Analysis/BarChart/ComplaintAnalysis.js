@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import ReactApexChart from "react-apexcharts";
+import { ip } from "../../../../Config/ip";
 
 const ComplaintAnalysis = (props) => {
   const [chartData, setChartData] = useState({
@@ -101,7 +102,7 @@ const ComplaintAnalysis = (props) => {
     };
 
     fetch(
-      `http://localhost:9999/ComplaintsAnalysis?sportsComplexId=${props.selectedOption}`,
+      `${ip}/ComplaintsAnalysis?sportsComplexId=${props.selectedOption}`,
       requestOptions
     )
       .then((response) => response.json())

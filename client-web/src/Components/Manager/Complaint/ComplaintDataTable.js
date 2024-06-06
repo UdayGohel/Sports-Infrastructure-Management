@@ -12,6 +12,7 @@ import { useSelector } from "react-redux";
 import { ComplaintService } from "./ComplaintServices";
 import { useRef } from "react";
 import Swal from "sweetalert2";
+import { ip } from "../../../Config/ip";
 
 export default function ComplaintDataTable() {
   const { SportComplexId, _id } = useSelector((state) => state.user.user);
@@ -44,7 +45,7 @@ export default function ComplaintDataTable() {
   //           headers: myHeaders,
   //           redirect: "follow",
   //         };
-  //         fetch(`http://localhost:9999/deleteblog/${rowdata._id}`, requestOptions)
+  //         fetch(`${ip}/deleteblog/${rowdata._id}`, requestOptions)
   //           .then((response) => response.text())
   //           .then((result) => {
   //             setdeleterefresh(!deleterefresh);
@@ -166,10 +167,7 @@ export default function ComplaintDataTable() {
       redirect: "follow",
     };
 
-    fetch(
-      `http://localhost:9999/updateComplaint/${rowdata._id}`,
-      requestOptions
-    )
+    fetch(`${ip}/updateComplaint/${rowdata._id}`, requestOptions)
       .then((response) => response.json())
       .then((result) => {
         Swal.fire({
@@ -202,10 +200,7 @@ export default function ComplaintDataTable() {
       redirect: "follow",
     };
 
-    fetch(
-      `http://localhost:9999/updateComplaint/${rowdata._id}`,
-      requestOptions
-    )
+    fetch(`${ip}/updateComplaint/${rowdata._id}`, requestOptions)
       .then((response) => response.json())
       .then((result) => {
         console.log(result);
@@ -366,7 +361,7 @@ export default function ComplaintDataTable() {
             <div className="modal-body p-4 flex justify-center items-center">
               <img
                 key=""
-                src={` http://localhost:9999/complaints/${modalImages}`}
+                src={` ${ip}/complaints/${modalImages}`}
                 alt="Sport Facility Pic"
                 className="w-60 h-60 object-cover mx-2"
               />

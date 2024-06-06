@@ -11,6 +11,7 @@ import { LeaderboardServices } from "./LeaderboardServices";
 import ChartConfig from "./ChartConfig";
 import BarChartConfig from "./BarChartConfig";
 import * as XLSX from "xlsx";
+import { ip } from "../../../Config/ip";
 
 export default function LeaderboardDataTable({ selectedOption }) {
   const [deleterefresh, setdeleterefresh] = useState(true);
@@ -266,7 +267,7 @@ export default function LeaderboardDataTable({ selectedOption }) {
             return (
               <img
                 className="w-full h-56"
-                src={`http://localhost:9999/${rowdata.image.slice(1)}`}
+                src={`${ip}/${rowdata.image.slice(1)}`}
                 alt="Sport Facility Pic"
               />
             );

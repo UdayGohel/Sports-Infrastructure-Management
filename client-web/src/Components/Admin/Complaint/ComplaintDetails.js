@@ -13,6 +13,7 @@ import { useSelector } from "react-redux";
 import { AdminComplaintService } from "./ComplaintServices";
 import { useRef } from "react";
 import * as XLSX from "xlsx";
+import { ip } from "../../../Config/ip";
 
 export default function AdminComplaintDataTable({ type, fromdate, todate }) {
   const { _id } = useSelector((state) => state.user.user);
@@ -173,10 +174,7 @@ export default function AdminComplaintDataTable({ type, fromdate, todate }) {
       redirect: "follow",
     };
 
-    fetch(
-      `http://localhost:9999/updateComplaint/${rowdata._id}`,
-      requestOptions
-    )
+    fetch(`${ip}/updateComplaint/${rowdata._id}`, requestOptions)
       .then((response) => response.json())
       .then((result) => {
         console.log(result);
@@ -328,7 +326,7 @@ export default function AdminComplaintDataTable({ type, fromdate, todate }) {
             <div className="modal-body p-4 flex justify-center items-center">
               <img
                 key=""
-                src={` http://localhost:9999/complaints/${modalImages}`}
+                src={` ${ip}/complaints/${modalImages}`}
                 alt="Sport Facility Pic"
                 className="w-60 h-60 object-cover mx-2"
               />

@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 import { useEffect } from "react";
 import { useSelector } from "react-redux";
+import { ip } from "../Config/ip";
 const ManagerDashboard = () => {
   const [visibale, setvisible] = useState(false);
   const [Instructor, setDetailsInstrutor] = useState({});
@@ -18,7 +19,7 @@ const ManagerDashboard = () => {
     };
 
     fetch(
-      `http://localhost:9999/sportsComplexDetail?sportsComplex=${SportComplexId}`,
+      `${ip}/sportsComplexDetail?sportsComplex=${SportComplexId}`,
       requestOptions
     )
       .then((response) => response.json())
@@ -30,35 +31,35 @@ const ManagerDashboard = () => {
       .catch((error) => console.log("error", error));
 
     fetch(
-      `http://localhost:9999/getAllComplaints?sportsComplex=${SportComplexId}&status=0`,
+      `${ip}/getAllComplaints?sportsComplex=${SportComplexId}&status=0`,
       requestOptions
     )
       .then((response) => response.json())
       .then((result) => setcomplaint(result.data.length))
       .catch((error) => console.log("error", error));
     fetch(
-      `http://localhost:9999/getAllComplaints?sportsComplex=${SportComplexId}&status=1`,
+      `${ip}/getAllComplaints?sportsComplex=${SportComplexId}&status=1`,
       requestOptions
     )
       .then((response) => response.json())
       .then((result) => unsetcomplaint(result.data.length))
       .catch((error) => console.log("error", error));
     fetch(
-      `http://localhost:9999/getAllComplaints?sportsComplex=${SportComplexId}&status=1&satisfied=1`,
+      `${ip}/getAllComplaints?sportsComplex=${SportComplexId}&status=1&satisfied=1`,
       requestOptions
     )
       .then((response) => response.json())
       .then((result) => setHappy(result.data.length))
       .catch((error) => console.log("error", error));
     fetch(
-      `http://localhost:9999/getAllComplaints?sportsComplex=${SportComplexId}&status=1&satisfied=0`,
+      `${ip}/getAllComplaints?sportsComplex=${SportComplexId}&status=1&satisfied=0`,
       requestOptions
     )
       .then((response) => response.json())
       .then((result) => setSad(result.data.length))
       .catch((error) => console.log("error", error));
     fetch(
-      `http://localhost:9999/getAllComplaints?sportsComplex=${SportComplexId}&level=1&status=0`,
+      `${ip}/getAllComplaints?sportsComplex=${SportComplexId}&level=1&status=0`,
       requestOptions
     )
       .then((response) => response.json())
@@ -134,11 +135,15 @@ const ManagerDashboard = () => {
           <AnimatedCount finalCount={visibale && complaint} />
         </div>
         <div className="h-44 text-center rounded-lg bg-gray-300 ">
-          <div className="font-semibold  p-5 text-2xl">Total Solved Complaints</div>
+          <div className="font-semibold  p-5 text-2xl">
+            Total Solved Complaints
+          </div>
           <AnimatedCount finalCount={visibale && uncomplaint} />
         </div>
         <div className="h-44 text-center rounded-lg bg-gray-300 ">
-          <div className="font-semibold p-5 text-2xl">Total Active Complaints</div>
+          <div className="font-semibold p-5 text-2xl">
+            Total Active Complaints
+          </div>
           <AnimatedCount finalCount={visibale && remain} />
         </div>
         <div className="h-44 text-center rounded-lg bg-gray-300 ">

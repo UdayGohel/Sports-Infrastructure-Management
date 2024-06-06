@@ -8,7 +8,7 @@ import AgeGroupAnalysis from "../../Admin/Analysis/BarChart/AgeGroupAnalysis";
 import AgeGroupwiseCount from "../../Admin/Analysis/BarChart/AgeGroupCount";
 import DistrictChart from "./DistrictChart";
 import AttendanceAnalysis from "../../Admin/Analysis/BarChart/Attendance";
-import GeneralAnalyis from "./GeneralAnalysis";
+import { ip } from "../../../Config/ip";
 
 const AuthorityBarChartAnalysis = () => {
   const [data, setData] = useState([]);
@@ -32,17 +32,14 @@ const AuthorityBarChartAnalysis = () => {
       redirect: "follow",
     };
 
-    fetch(
-      `http://localhost:9999/getSportsComplex?district=${DistrictId}`,
-      requestOptions
-    )
+    fetch(`${ip}/getSportsComplex?district=${DistrictId}`, requestOptions)
       .then((response) => response.json())
       .then((result) => {
         setData(result.data);
       })
       .catch((error) => console.log("error", error));
 
-    fetch("http://localhost:9999/getSports", requestOptions)
+    fetch(`${ip}/getSports`, requestOptions)
       .then((response) => response.json())
       .then((result) => setsports(result.data))
       .catch((error) => console.log("error", error));

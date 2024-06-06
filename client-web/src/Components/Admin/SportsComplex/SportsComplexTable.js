@@ -7,10 +7,10 @@ import { Column } from "primereact/column";
 import { InputText } from "primereact/inputtext";
 import { Button } from "primereact/button";
 import { Calendar } from "primereact/calendar";
-import { useSelector } from "react-redux/es/hooks/useSelector";
 import { Link } from "react-router-dom";
 import { SportComplexService } from "./SportsComplexService";
 import { useCookies } from "react-cookie";
+import { ip } from "../../../Config/ip";
 
 export default function SportComplexTable() {
   const [deleterefresh, setdeleterefresh] = useState(true);
@@ -43,7 +43,7 @@ export default function SportComplexTable() {
           headers: myHeaders,
           redirect: "follow",
         };
-        fetch(`http://localhost:9999/deleteblog/${rowdata._id}`, requestOptions)
+        fetch(`${ip}/deleteblog/${rowdata._id}`, requestOptions)
           .then((response) => response.text())
           .then((result) => {
             setdeleterefresh(!deleterefresh);
@@ -236,7 +236,7 @@ export default function SportComplexTable() {
             <div className="modal-body p-4 flex justify-center items-center">
               <img
                 key=""
-                src={` http://localhost:9999${modalImages}`}
+                src={` ${ip}${modalImages}`}
                 alt="Sport Complex Pic"
                 className="w-60 h-60 object-cover mx-2"
               />

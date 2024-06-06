@@ -1,6 +1,8 @@
+import { ip } from "../../../Config/ip";
+
 export const FacilityService = {
   getData() {
-    return fetch("http://localhost:9999/getSports")
+    return fetch(`${ip}/getSports`)
       .then((res) => res.json())
       .then((res) => {
         return res.data;
@@ -32,8 +34,6 @@ export const FacilityService = {
           .join("&")
       : "";
 
-    return fetch("http://localhost:9999/getSports" + queryParams).then((res) =>
-      res.json()
-    );
+    return fetch(`${ip}/getSports` + queryParams).then((res) => res.json());
   },
 };

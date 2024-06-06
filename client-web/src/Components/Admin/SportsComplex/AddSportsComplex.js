@@ -5,6 +5,7 @@ import { NavLink, useNavigate } from "react-router-dom";
 import { Button } from "@material-tailwind/react";
 import Swal from "sweetalert2";
 import { sportComplexSchema } from "../../../Schemas";
+import { ip } from "../../../Config/ip";
 const initialValues = {
   name: "",
   location: "",
@@ -57,7 +58,7 @@ const AddSportsComplex = () => {
       redirect: "follow",
     };
 
-    fetch("http://localhost:9999/addSportsComplex", requestOptions)
+    fetch(`${ip}/addSportsComplex`, requestOptions)
       .then((response) => response.text())
       .then((result) => {
         Swal.fire({

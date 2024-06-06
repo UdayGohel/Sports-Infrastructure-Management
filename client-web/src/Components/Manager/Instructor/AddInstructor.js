@@ -5,7 +5,7 @@ import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@material-tailwind/react";
 import { useSelector } from "react-redux";
-import { UserActions } from "../../../store/UserData";
+import { ip } from "../../../Config/ip";
 const initialValues = {
   name: "",
   email: "",
@@ -50,7 +50,7 @@ const AddInstructor = () => {
     };
 
     fetch(
-      `http://localhost:9999/getSportsComplexwithsport?_id=${SportComplexId}`,
+      `${ip}/getSportsComplexwithsport?_id=${SportComplexId}`,
       requestOptions
     )
       .then((response) => response.json())
@@ -155,7 +155,7 @@ const AddInstructor = () => {
       redirect: "follow",
     };
 
-    fetch("http://localhost:9999/signup", requestOptions)
+    fetch(`${ip}/signup`, requestOptions)
       .then((response) => response.json())
       .then((result) => {
         setinstructor(!instructor);
@@ -183,111 +183,115 @@ const AddInstructor = () => {
     });
   return (
     <>
-    <div className=" bg-[#f8f9fa] m-5 h-screen scrollbar">
-      <div className="flex  mx-5">
-        <Button
-          className="items-end cta-btn font-semibold py-4 mt-5 rounded-br-lg rounded-bl-lg rounded-tr-lg shadow-lg hover:shadow-xl "
-          onClick={() => {
-            navigate(-1);
-          }}
-        >
-          Back
-        </Button>
-      </div>
-      <div className="flex items-center justify-center ">
-        <div className="w-full max-w-2xl">
-          <h2 className="text-center text-2xl uppercase font-semibold font-serif text-gray-800">
-            Add New Instructor
-          </h2>
-          <form
-            onSubmit={handleSubmit}
-            className="bg-white shadow-md rounded-md px-8 pt-6 pb-8 mb-4 mt-5 shadow-gray-700"
+      <div className=" bg-[#f8f9fa] m-5 h-screen scrollbar">
+        <div className="flex  mx-5">
+          <Button
+            className="items-end cta-btn font-semibold py-4 mt-5 rounded-br-lg rounded-bl-lg rounded-tr-lg shadow-lg hover:shadow-xl "
+            onClick={() => {
+              navigate(-1);
+            }}
           >
-            <div className="mb-4">
-              <label
-                className="block text-gray-700 text-sm font-bold mb-2"
-                htmlFor="name"
-              >
-                Name
-              </label>
-              <input
-                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                name="name"
-                type="text"
-                placeholder="Name"
-                value={values.name}
-                onChange={handleChange}
-                onBlur={handleBlur}
-              />
-              {errors.name && touched.name ? (
-                <small className="text-ligth text-red-600">{errors.name}</small>
-              ) : null}
-            </div>
-            <div className="mb-4">
-              <label
-                className="block text-gray-700 text-sm font-bold mb-2"
-                htmlFor="email"
-              >
-                Email
-              </label>
-              <input
-                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                name="email"
-                type="text"
-                placeholder="Enter Your Email"
-                value={values.email}
-                onChange={handleChange}
-                onBlur={handleBlur}
-              />
-              {errors.email && touched.email ? (
-                <small className="text-ligth text-red-600">
-                  {errors.email}
-                </small>
-              ) : null}
-            </div>
-            <div className="mb-6">
-              <label
-                className="block text-gray-700 text-sm font-bold mb-2"
-                htmlFor="mobileNumber"
-              >
-                Mobile Number
-              </label>
-              <input
-                name="mobileNumber"
-                type="number"
-                value={values.mobileNumber}
-                onChange={handleChange}
-                onBlur={handleBlur}
-                placeholder="Enter Mobile Number"
-                className="shadow appearance-none  rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
-              ></input>
-              {errors.mobileNumber && touched.mobileNumber ? (
-                <small className="text-ligth text-red-600">
-                  {errors.mobileNumber}
-                </small>
-              ) : null}
-            </div>
-            <div className="mb-6">
-              <label
-                className="block text-gray-700 text-sm font-bold mb-2"
-                htmlFor="dob"
-              >
-                Date of Birth
-              </label>
-              <input
-                name="dob"
-                type="date"
-                value={values.dob}
-                onChange={handleChange}
-                onBlur={handleBlur}
-                placeholder="Enter Number"
-                className="shadow appearance-none  rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
-              ></input>
-              {errors.dob && touched.dob ? (
-                <small className="text-ligth text-red-600">{errors.dob}</small>
-              ) : null}
-            </div>
-            {/* <div className="mb-4">
+            Back
+          </Button>
+        </div>
+        <div className="flex items-center justify-center ">
+          <div className="w-full max-w-2xl">
+            <h2 className="text-center text-2xl uppercase font-semibold font-serif text-gray-800">
+              Add New Instructor
+            </h2>
+            <form
+              onSubmit={handleSubmit}
+              className="bg-white shadow-md rounded-md px-8 pt-6 pb-8 mb-4 mt-5 shadow-gray-700"
+            >
+              <div className="mb-4">
+                <label
+                  className="block text-gray-700 text-sm font-bold mb-2"
+                  htmlFor="name"
+                >
+                  Name
+                </label>
+                <input
+                  className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                  name="name"
+                  type="text"
+                  placeholder="Name"
+                  value={values.name}
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                />
+                {errors.name && touched.name ? (
+                  <small className="text-ligth text-red-600">
+                    {errors.name}
+                  </small>
+                ) : null}
+              </div>
+              <div className="mb-4">
+                <label
+                  className="block text-gray-700 text-sm font-bold mb-2"
+                  htmlFor="email"
+                >
+                  Email
+                </label>
+                <input
+                  className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                  name="email"
+                  type="text"
+                  placeholder="Enter Your Email"
+                  value={values.email}
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                />
+                {errors.email && touched.email ? (
+                  <small className="text-ligth text-red-600">
+                    {errors.email}
+                  </small>
+                ) : null}
+              </div>
+              <div className="mb-6">
+                <label
+                  className="block text-gray-700 text-sm font-bold mb-2"
+                  htmlFor="mobileNumber"
+                >
+                  Mobile Number
+                </label>
+                <input
+                  name="mobileNumber"
+                  type="number"
+                  value={values.mobileNumber}
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  placeholder="Enter Mobile Number"
+                  className="shadow appearance-none  rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
+                ></input>
+                {errors.mobileNumber && touched.mobileNumber ? (
+                  <small className="text-ligth text-red-600">
+                    {errors.mobileNumber}
+                  </small>
+                ) : null}
+              </div>
+              <div className="mb-6">
+                <label
+                  className="block text-gray-700 text-sm font-bold mb-2"
+                  htmlFor="dob"
+                >
+                  Date of Birth
+                </label>
+                <input
+                  name="dob"
+                  type="date"
+                  value={values.dob}
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  placeholder="Enter Number"
+                  className="shadow appearance-none  rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
+                ></input>
+                {errors.dob && touched.dob ? (
+                  <small className="text-ligth text-red-600">
+                    {errors.dob}
+                  </small>
+                ) : null}
+              </div>
+              {/* <div className="mb-4">
               <label
                 className="block text-gray-700 text-sm font-bold mb-2"
                 htmlFor="sports"
@@ -318,105 +322,105 @@ const AddInstructor = () => {
               ) : null}
             </div> */}
 
-            <div className="mb-6">
-              <div>
-                <label
-                  className="block text-gray-700 text-sm font-bold mb-2"
-                  htmlFor="dob"
-                >
-                  Facility
-                </label>
-              </div>
-              {formData.map((data, checkboxIndex) => (
-                <div key={checkboxIndex}>
-                  <label>
-                    <input
-                      // className="shadow appearance-none  rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
-                      type="checkbox"
-                      checked={checkedCheckboxes.includes(checkboxIndex)}
-                      onChange={() => handleCheckboxChange(checkboxIndex)}
-                    />
-                    {data.SportName}
+              <div className="mb-6">
+                <div>
+                  <label
+                    className="block text-gray-700 text-sm font-bold mb-2"
+                    htmlFor="dob"
+                  >
+                    Facility
                   </label>
-                  {checkedCheckboxes.includes(checkboxIndex) && (
-                    <div>
-                      <input
-                        type="text"
-                        value={data.experience}
-                        onChange={(e) =>
-                          handleExperience(checkboxIndex, e.target.value)
-                        }
-                        placeholder="Experience in Sports"
-                        className="shadow appearance-none w-full rounded py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
-                      />
-                      {data.fields.map((field, fieldIndex) => (
-                        <div key={fieldIndex} className="flex gap-2">
-                          <input
-                            className="w-1/3 shadow appearance-none rounded py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
-                            type="text"
-                            placeholder="Start Time"
-                            value={field.from}
-                            onChange={(e) =>
-                              handleInputChange(
-                                checkboxIndex,
-                                fieldIndex,
-                                "from",
-                                e.target.value
-                              )
-                            }
-                            required
-                          />
-                          <input
-                            type="text"
-                            className="w-1/3 shadow appearance-none  rounded py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
-                            placeholder="End Time"
-                            value={field.to}
-                            onChange={(e) =>
-                              handleInputChange(
-                                checkboxIndex,
-                                fieldIndex,
-                                "to",
-                                e.target.value
-                              )
-                            }
-                            required
-                          />
-                          <button
-                            type="button"
-                            className=" bg-red-700 text-white font-semibold hover:bg-red-500 rounded-md py-2 px-3 h-10"
-                            onClick={() =>
-                              handleRemoveField(checkboxIndex, fieldIndex)
-                            }
-                          >
-                            Remove Field
-                          </button>
-                        </div>
-                      ))}
-                      <button
-                        type="button"
-                        onClick={() => handleAddField(checkboxIndex)}
-                        className="bg-blue-800 text-white font-semibold hover:bg-blue-600 rounded-md py-2 px-3 h-10"
-                      >
-                        Add Field
-                      </button>
-                    </div>
-                  )}
                 </div>
-              ))}
-            </div>
+                {formData.map((data, checkboxIndex) => (
+                  <div key={checkboxIndex}>
+                    <label>
+                      <input
+                        // className="shadow appearance-none  rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
+                        type="checkbox"
+                        checked={checkedCheckboxes.includes(checkboxIndex)}
+                        onChange={() => handleCheckboxChange(checkboxIndex)}
+                      />
+                      {data.SportName}
+                    </label>
+                    {checkedCheckboxes.includes(checkboxIndex) && (
+                      <div>
+                        <input
+                          type="text"
+                          value={data.experience}
+                          onChange={(e) =>
+                            handleExperience(checkboxIndex, e.target.value)
+                          }
+                          placeholder="Experience in Sports"
+                          className="shadow appearance-none w-full rounded py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
+                        />
+                        {data.fields.map((field, fieldIndex) => (
+                          <div key={fieldIndex} className="flex gap-2">
+                            <input
+                              className="w-1/3 shadow appearance-none rounded py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
+                              type="text"
+                              placeholder="Start Time"
+                              value={field.from}
+                              onChange={(e) =>
+                                handleInputChange(
+                                  checkboxIndex,
+                                  fieldIndex,
+                                  "from",
+                                  e.target.value
+                                )
+                              }
+                              required
+                            />
+                            <input
+                              type="text"
+                              className="w-1/3 shadow appearance-none  rounded py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
+                              placeholder="End Time"
+                              value={field.to}
+                              onChange={(e) =>
+                                handleInputChange(
+                                  checkboxIndex,
+                                  fieldIndex,
+                                  "to",
+                                  e.target.value
+                                )
+                              }
+                              required
+                            />
+                            <button
+                              type="button"
+                              className=" bg-red-700 text-white font-semibold hover:bg-red-500 rounded-md py-2 px-3 h-10"
+                              onClick={() =>
+                                handleRemoveField(checkboxIndex, fieldIndex)
+                              }
+                            >
+                              Remove Field
+                            </button>
+                          </div>
+                        ))}
+                        <button
+                          type="button"
+                          onClick={() => handleAddField(checkboxIndex)}
+                          className="bg-blue-800 text-white font-semibold hover:bg-blue-600 rounded-md py-2 px-3 h-10"
+                        >
+                          Add Field
+                        </button>
+                      </div>
+                    )}
+                  </div>
+                ))}
+              </div>
 
-            <div className="flex items-center justify-center">
-              <button
-                className="bg-black uppercase hover:bg-gray-900 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-                type="submit"
-                // onClick={console.log("Hello")}
-              >
-                Submit
-              </button>
-            </div>
-          </form>
+              <div className="flex items-center justify-center">
+                <button
+                  className="bg-black uppercase hover:bg-gray-900 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                  type="submit"
+                  // onClick={console.log("Hello")}
+                >
+                  Submit
+                </button>
+              </div>
+            </form>
+          </div>
         </div>
-      </div>
       </div>
     </>
   );

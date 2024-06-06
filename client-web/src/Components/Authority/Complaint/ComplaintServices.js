@@ -1,6 +1,8 @@
+import { ip } from "../../../Config/ip";
+
 export const AuthorityComplaintService = {
   getData(id) {
-    return fetch(`http://localhost:9999/getAuthorityComplaint?DistrictId=${id}`)
+    return fetch(`${ip}/getAuthorityComplaint?DistrictId=${id}`)
       .then((res) => res.json())
       .then((res) => {
         return res.status0;
@@ -22,18 +24,4 @@ export const AuthorityComplaintService = {
   getCustomersXLarge(id) {
     return Promise.resolve(this.getData(id));
   },
-
-  //   getCustomers(params) {
-  //     const queryParams = params
-  //       ? Object.keys(params)
-  //           .map(
-  //             (k) => encodeURIComponent(k) + "=" + encodeURIComponent(params[k])
-  //           )
-  //           .join("&")
-  //       : "";
-
-  //     return fetch("http://localhost:9999/getSports" + queryParams).then((res) =>
-  //       res.json()
-  //     );
-  //   },
 };

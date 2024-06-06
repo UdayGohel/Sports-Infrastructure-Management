@@ -6,7 +6,8 @@ import { useCookies } from "react-cookie";
 import Swal from "sweetalert2";
 import { useDispatch } from "react-redux";
 import { UserActions } from "../store/UserData";
-import image from './../Assets/symbol.png'
+import image from "./../Assets/symbol.png";
+import { ip } from "../Config/ip";
 const initialValues = {
   Email: "",
   Password: "",
@@ -31,7 +32,7 @@ const Login = () => {
       body: raw,
       redirect: "follow",
     };
-    fetch("http://localhost:9999/login", requestOptions)
+    fetch(`${ip}/login`, requestOptions)
       .then((response) => response.json())
       .then((result) => {
         console.log(result);
@@ -96,7 +97,7 @@ const Login = () => {
               </p> */}
 
               <span className="mt-[3.75rem] inline-block">
-                <img src = {image} alt="symbol"/>
+                <img src={image} alt="symbol" />
                 {/* <svg
                   width="350"
                   height="350"

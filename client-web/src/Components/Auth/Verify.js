@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useCookies } from "react-cookie";
 import { redirect } from "react-router-dom";
 import Login from "../../Pages/Login";
+import { ip } from "../../Config/ip";
 
 const Verify = async (role) => {
   const token = localStorage.getItem("token");
@@ -19,10 +20,7 @@ const Verify = async (role) => {
       body: raw,
       redirect: "follow",
     };
-    const response = await fetch(
-      "http://localhost:9999/verify",
-      requestOptions
-    );
+    const response = await fetch(`${ip}/verify`, requestOptions);
     const result = await response.json();
     if (result.rcode === 200) {
       if (result.data.Role == role) {

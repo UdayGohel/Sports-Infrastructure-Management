@@ -3,6 +3,7 @@ import AllBlogs from "../Components/Admin/DataTable";
 import { useEffect } from "react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { ip } from "../Config/ip";
 
 const AdminDashboard = () => {
   const [data, setdata] = useState({});
@@ -13,7 +14,7 @@ const AdminDashboard = () => {
       redirect: "follow",
     };
 
-    fetch("http://localhost:9999/AdminViewDetails", requestOptions)
+    fetch(`${ip}/AdminViewDetails`, requestOptions)
       .then((response) => response.json())
       .then((result) => {
         console.log(result);
@@ -78,7 +79,9 @@ const AdminDashboard = () => {
           <AnimatedCount finalCount={visible && data.totalsupervisor} />
         </div>
         <div className="h-44 text-center rounded-lg bg-gray-300 ">
-          <div className=" font-semibold  p-5 text-2xl">Total Complaints in Gujarat</div>
+          <div className=" font-semibold  p-5 text-2xl">
+            Total Complaints in Gujarat
+          </div>
           <AnimatedCount finalCount={visible && data.totalcomplaints} />
         </div>
         <div className="h-44 text-center rounded-lg bg-gray-300 ">
@@ -96,7 +99,9 @@ const AdminDashboard = () => {
           <AnimatedCount finalCount={visible && data.solvedComplaints} />
         </div>
         <div className="h-44 text-center rounded-lg bg-gray-300 ">
-          <div className="font-semibold  p-5 text-2xl">Total Active Complaints(Admin)</div>
+          <div className="font-semibold  p-5 text-2xl">
+            Total Active Complaints(Admin)
+          </div>
           <AnimatedCount finalCount={visible && data.activecomplaints} />
         </div>
         <div className="h-44 text-center rounded-lg bg-gray-300 ">

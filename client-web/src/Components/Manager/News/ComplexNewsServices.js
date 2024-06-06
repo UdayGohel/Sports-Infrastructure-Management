@@ -1,8 +1,8 @@
+import { ip } from "../../../Config/ip";
+
 export const ComplexNewsServices = {
   getData(id) {
-    return fetch(
-      `http://localhost:9999/getUpdates?level=2&sportComplexId=${id}`
-    )
+    return fetch(`${ip}/getUpdates?level=2&sportComplexId=${id}`)
       .then((res) => res.json())
       .then((res) => {
         return res.data;
@@ -25,17 +25,5 @@ export const ComplexNewsServices = {
     return Promise.resolve(this.getData(id));
   },
 
-  //   getCustomers(params) {
-  //     const queryParams = params
-  //       ? Object.keys(params)
-  //           .map(
-  //             (k) => encodeURIComponent(k) + "=" + encodeURIComponent(params[k])
-  //           )
-  //           .join("&")
-  //       : "";
-
-  //     return fetch("http://localhost:9999/getSports" + queryParams).then((res) =>
-  //       res.json()
-  //     );
   //   },
 };

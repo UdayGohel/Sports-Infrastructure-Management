@@ -11,6 +11,7 @@ import { Link } from "react-router-dom";
 import { useCookies } from "react-cookie";
 import { useSelector } from "react-redux";
 import { AthelteServices } from "./AthelteServices";
+import { ip } from "../../../Config/ip";
 
 export default function AthelteDataTable() {
   const { SportComplexId } = useSelector((state) => state.user.user);
@@ -44,7 +45,7 @@ export default function AthelteDataTable() {
           headers: myHeaders,
           redirect: "follow",
         };
-        fetch(`http://localhost:9999/deleteblog/${rowdata._id}`, requestOptions)
+        fetch(`${ip}/deleteblog/${rowdata._id}`, requestOptions)
           .then((response) => response.text())
           .then((result) => {
             setdeleterefresh(!deleterefresh);
@@ -237,7 +238,7 @@ export default function AthelteDataTable() {
               <img
                 src={
                   rowData.baseUrl
-                    ? `http://localhost:9999/${rowData.athlete[0].baseUrl.slice(
+                    ? `${ip}/${rowData.athlete[0].baseUrl.slice(
                         1
                       )}`
                     : ""
@@ -276,7 +277,10 @@ export default function AthelteDataTable() {
           body={(rowData) => (
             <div>
               {rowData.sports.map((item, index) => (
-                <h1 className="flex" key={index}> - <div className="px-2">{item.SportName}</div> </h1>
+                <h1 className="flex" key={index}>
+                  {" "}
+                  - <div className="px-2">{item.SportName}</div>{" "}
+                </h1>
               ))}
             </div>
           )}

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import ReactApexChart from "react-apexcharts";
+import { ip } from "../../../Config/ip";
 
 const DistrictWiseChart = (props) => {
   console.log("in", props.formdata);
@@ -86,7 +87,7 @@ const DistrictWiseChart = (props) => {
     };
 
     fetch(
-      `http://localhost:9999/getSportsCount?districtId=${props.selectedata}`,
+      `${ip}/getSportsCount?districtId=${props.selectedata}`,
       requestOptions
     )
       .then((response) => response.json())

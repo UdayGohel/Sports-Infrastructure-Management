@@ -7,6 +7,7 @@ const paymentModel = require("../Model/PaymentModel");
 const complaintModel = require("../Model/ComplaintModel");
 const session = require("../Model/SessionModel");
 const { response } = require("express");
+const { ip } = require("../config/ip");
 
 module.exports.AddSportsComplex = async function (req, res) {
   const BaseUrl = `/SportComplexes/${req.file.originalname}`;
@@ -90,7 +91,7 @@ module.exports.updateSportsComplex = async function (req, res) {
   console.log(req.files);
   let resourcesarray = [];
   req.files.forEach((ele) => {
-    resourcesarray.push(`http://localhost:9999/uploads/${ele.originalname}`);
+    resourcesarray.push(`${ip}/uploads/${ele.originalname}`);
   });
 
   let json = {
