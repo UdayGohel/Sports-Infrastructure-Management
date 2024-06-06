@@ -7,10 +7,9 @@ const paymentModel = require("../Model/PaymentModel");
 const complaintModel = require("../Model/ComplaintModel");
 const session = require("../Model/SessionModel");
 const { response } = require("express");
-const { ip } = require("../config/ip");
 
 module.exports.AddSportsComplex = async function (req, res) {
-  const BaseUrl = `/SportComplexes/${req.file.originalname}`;
+  const BaseUrl = `https://sports-infrastructure-management-p7d7.onrender.com/SportComplexes/${req.file.originalname}`;
   console.log(BaseUrl);
   // req.body.baseUrl = BaseUrl;
 

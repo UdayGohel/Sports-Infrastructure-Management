@@ -7,10 +7,9 @@ const ComplaintTypeModel = require("../Model/ComplaintTypeModel");
 const ComplaintModel = require("../Model/ComplaintModel");
 const Reminder = require("../Model/Reminder");
 const { setReminder } = require("../SetReminder");
-const { ip } = require("../config/ip");
 module.exports.addAthlete = async function (req, res) {
   //console.log(req.file);
-  const BaseUrl = `${ip}/Athletes/${req.file.originalname}`;
+  const BaseUrl = `https://sports-infrastructure-management-p7d7.onrender.com/Athletes/${req.file.originalname}`;
   //console.log(BaseUrl);
   req.body.baseUrl = BaseUrl;
   let Athlete = new AthleteModel(req.body);

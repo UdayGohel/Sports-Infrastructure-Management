@@ -1,3 +1,5 @@
+import { ip } from "../../../Config/ip";
+
 export const ManagerService = {
   getData() {
     return fetch(`${ip}/getuserwithsportscomplex?Role=3`)

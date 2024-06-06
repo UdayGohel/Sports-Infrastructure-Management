@@ -1,9 +1,8 @@
 const SportModel = require("../Model/SportModel");
-const { ip } = require("../config/ip");
 
 module.exports.AddSport = async function (req, res) {
   //console.log(req.file);
-  const BaseUrl = `${ip}/uploads/${req.file.originalname}`;
+  const BaseUrl = `https://sports-infrastructure-management-p7d7.onrender.com/uploads/${req.file.originalname}`;
   //console.log(BaseUrl);
   req.body.baseUrl = BaseUrl;
 
