@@ -26,10 +26,7 @@ const RatingReview = ({ complexId }) => {
       redirect: "follow",
     };
 
-    fetch(
-      `http://${ip}:9999/getAllRatings?sportComplex=${complexId}`,
-      requestOptions
-    )
+    fetch(`${ip}/getAllRatings?sportComplex=${complexId}`, requestOptions)
       .then((response) => response.json())
       .then((result) => setData(result.data))
       .catch((error) => console.log("error", error))
@@ -66,7 +63,7 @@ const RatingReview = ({ complexId }) => {
                   // backgroundColor: "white",
                 }}
                 source={{
-                  uri: `http://${ip}:9999/${review.athleteId.baseUrl.slice(1)}`,
+                  uri: `${ip}/${review.athleteId.baseUrl.slice(1)}`,
                 }}
               />
               <Text style={styles.author}>{review.athleteId.userId.Name}</Text>

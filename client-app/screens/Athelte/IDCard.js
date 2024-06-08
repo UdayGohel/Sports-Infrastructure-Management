@@ -54,7 +54,7 @@ const IDCard = ({ navigation }) => {
             borderWidth: 5,
             marginBottom: "10%",
           }}
-          source={{ uri: `http://${ip}:9999/${image}` }}
+          source={{ uri: `${ip}/${image}` }}
         />
         <View style={styles.profileDetail}>
           {/* {supervisorId && <QRCodeGenerator value={supervisorId} size={300} />} */}

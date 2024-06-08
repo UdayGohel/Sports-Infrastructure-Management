@@ -30,7 +30,7 @@ const RatingModal = (props) => {
       redirect: "follow",
     };
 
-    fetch(`http://${ip}:9999/ratingByInstructor`, requestOptions)
+    fetch(`${ip}/ratingByInstructor`, requestOptions)
       .then((response) => response.text())
       .then((result) => {
         alert("Rating Added Successfully");

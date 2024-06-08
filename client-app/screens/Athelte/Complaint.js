@@ -38,7 +38,7 @@ const Complaint = ({ navigation }) => {
         redirect: "follow",
       };
 
-      fetch(`http://${ip}:9999/getComplaintType`, requestOptions)
+      fetch(`${ip}/getComplaintType`, requestOptions)
         .then((response) => response.json())
         .then((result) => {
           setcomplaintList(result.data);
@@ -85,14 +85,11 @@ const Complaint = ({ navigation }) => {
       body: raw,
       redirect: "follow",
     };
-    let response = await fetch(
-      `http://${ip}:9999/addComplaintApp`,
-      requestOptions
-    );
+    let response = await fetch(`${ip}/addComplaintApp`, requestOptions);
     let result = await response.json();
     if (result.rcode == 200) {
       let response = await FileSystem.uploadAsync(
-        `http://${ip}:9999/complaintPhoto`,
+        `${ip}/complaintPhoto`,
         photo,
         {
           fieldName: "photo",

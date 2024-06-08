@@ -51,7 +51,7 @@ const MyCarousel = ({ navigation, route }) => {
       redirect: "follow",
     };
 
-    fetch(`http://${ip}:9999/getUpdates?level=0&active=1`, requestOptions)
+    fetch(`${ip}/getUpdates?level=0&active=1`, requestOptions)
       .then((response) => response.json())
       .then((result) => {
         setImages(result.data);

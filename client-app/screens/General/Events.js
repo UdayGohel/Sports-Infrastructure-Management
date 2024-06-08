@@ -22,7 +22,7 @@ const Events = ({ navigation }) => {
       redirect: "follow",
     };
 
-    fetch(`http://${ip}:9999/getUpdates?level=0&active=1`, requestOptions)
+    fetch(`${ip}/getUpdates?level=0&active=1`, requestOptions)
       .then((response) => response.json())
       .then((result) => {
         console.log(result);

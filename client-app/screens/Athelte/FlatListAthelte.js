@@ -73,7 +73,7 @@ function renderCategoryItem(itemData, ip, navigate) {
               borderRadius: 5,
             }}
             source={{
-              uri: `http://${ip}:9999${itemData.item.picture}`,
+              uri: `${ip}${itemData.item.picture}`,
             }}
           />
           <View style={styles.cardHeader}>
@@ -135,7 +135,7 @@ function FlatListAthelte({
       redirect: "follow",
     };
     fetch(
-      `http://${ip}:9999/${optionField}?q=${searchfield}&distance=${range}&lat=${latitude}&lon=${longitude}&Category=${cat}`,
+      `${ip}/${optionField}?q=${searchfield}&distance=${range}&lat=${latitude}&lon=${longitude}&Category=${cat}`,
       requestOptions
     )
       .then((response) => response.json())

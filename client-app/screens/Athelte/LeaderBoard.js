@@ -54,7 +54,7 @@ const LeaderBoard = ({ navigation }) => {
     };
 
     fetch(
-      `http://${ip}:9999/getAthletesWithRating?id=${AthelteData[0]._id}`,
+      `${ip}/getAthletesWithRating?id=${AthelteData[0]._id}`,
       requestOptions
     )
       .then((response) => response.json())
@@ -62,7 +62,7 @@ const LeaderBoard = ({ navigation }) => {
         setuserdata(result.currentuserdata);
         let temp = result.data1.map((item) => {
           let iconUrl = item.iconUrl.slice(1);
-          return { ...item, iconUrl: `http://${ip}:9999/${iconUrl}` };
+          return { ...item, iconUrl: `${ip}/${iconUrl}` };
         });
         setatheltedata(temp);
         setLoading(false);
@@ -127,7 +127,7 @@ const LeaderBoard = ({ navigation }) => {
                   borderColor: "#fbe8e0",
                   borderWidth: 5,
                 }}
-                source={{ uri: `http://${ip}:9999/${image}` }}
+                source={{ uri: `${ip}/${image}` }}
               />
             </View>
             <Text style={styles.label}>

@@ -61,7 +61,7 @@ const Form = ({ navigation }) => {
     const getinstructor = () => {
       if (selectedOption) {
         fetch(
-          `http://${ip}:9999/getInstructorForPayment?sportId=${selectedOption}&sportComplexId=${userdata.SportComplexId}`,
+          `${ip}/getInstructorForPayment?sportId=${selectedOption}&sportComplexId=${userdata.SportComplexId}`,
           requestOptions
         )
           .then((response) => response.json())
@@ -73,7 +73,7 @@ const Form = ({ navigation }) => {
     };
     getinstructor();
     fetch(
-      `http://${ip}:9999/getSportsComplexwithsport?_id=${userdata.SportComplexId}`,
+      `${ip}/getSportsComplexwithsport?_id=${userdata.SportComplexId}`,
       requestOptions
     )
       .then((response) => response.json())
@@ -91,7 +91,7 @@ const Form = ({ navigation }) => {
       redirect: "follow",
     };
 
-    fetch(`http://${ip}:9999/getuserwithathelte?Email=${email}`, requestOptions)
+    fetch(`${ip}/getuserwithathelte?Email=${email}`, requestOptions)
       .then((response) => response.json())
       .then((result) => {
         // console.log(result.rcode===200);
@@ -202,7 +202,7 @@ const Form = ({ navigation }) => {
       redirect: "follow",
     };
 
-    fetch(`http://${ip}:9999/paymentdetail`, requestOptions)
+    fetch(`${ip}/paymentdetail`, requestOptions)
       .then((response) => response.json())
       .then((result) => {
         Alert.alert("Athlete Added ", "Account Created Successfully", [

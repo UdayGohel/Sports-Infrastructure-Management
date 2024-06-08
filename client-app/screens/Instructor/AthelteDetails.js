@@ -28,10 +28,7 @@ const AthleteDetails = () => {
       redirect: "follow",
     };
 
-    fetch(
-      `http://${ip}:9999/countOfPayment?sportsComplexId=${sid}`,
-      requestOptions
-    )
+    fetch(`${ip}/countOfPayment?sportsComplexId=${sid}`, requestOptions)
       .then((response) => response.json())
       .then((result) => {
         setAthelteList(result.data);
@@ -83,9 +80,7 @@ const AthleteDetails = () => {
                         marginLeft: 1,
                       }}
                       source={{
-                        uri: `http://${ip}:9999/${item.athlete[0].baseUrl.slice(
-                          1
-                        )}`,
+                        uri: `${ip}/${item.athlete[0].baseUrl.slice(1)}`,
                       }}
                     />
                   </View>

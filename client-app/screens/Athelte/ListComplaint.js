@@ -29,7 +29,7 @@ const ListComplaint = () => {
       redirect: "follow",
     };
     fetch(
-      `http://${ip}:9999/getAllComplaints?userId=${Userdata._id}&status=${selectedstatus}`,
+      `${ip}/getAllComplaints?userId=${Userdata._id}&status=${selectedstatus}`,
       requestOptions
     )
       .then((response) => response.json())

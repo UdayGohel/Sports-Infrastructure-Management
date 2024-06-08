@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "client-app",
-    "slug": "client-app",
+    "slug": "sport-infra",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/Logo.png",
@@ -28,7 +28,9 @@
       ],
       "@react-native-firebase/app"
     ],
-    "assetBundlePatterns": ["**/*"],
+    "assetBundlePatterns": [
+      "**/*"
+    ],
     "ios": {
       "supportsTablet": true
     },
@@ -51,9 +53,9 @@
     },
     "extra": {
       "eas": {
-        "projectId": "7bcfce19-afb3-4e1a-9fc1-c71b4988a7f7"
+        "projectId": "7d0870e2-f520-4a60-98c2-89af8054b8d3"
       }
     },
-    "owner": "devamdoshi4"
+    "owner": "udaygohel"
   }
 }

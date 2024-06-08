@@ -40,7 +40,7 @@ const BookSlot = ({ navigation, route }) => {
     // };
 
     // fetch(
-    //   `http://${ip}:9999/getPaymentTimeslotCount?timeSlotTo=sas&timeSlotFrom=sd&sportsComplex=da&sports=da`,
+    //   `${ip}/getPaymentTimeslotCount?timeSlotTo=sas&timeSlotFrom=sd&sportsComplex=da&sports=da`,
     //   requestOptions
     // )
     //   .then((response) => response.text())
@@ -74,7 +74,7 @@ const BookSlot = ({ navigation, route }) => {
     // };
 
     // fetch(
-    //   `http://${ip}:9999/getAtheleteIdFromPayment?sports=${selectedsport}&instructorId=${instructorid}`,
+    //   `${ip}/getAtheleteIdFromPayment?sports=${selectedsport}&instructorId=${instructorid}`,
     //   requestOptions
     // )
     //   .then((response) => response.json())
@@ -90,7 +90,7 @@ const BookSlot = ({ navigation, route }) => {
       };
 
       fetch(
-        `http://${ip}:9999/gettimeslotforguest?sportId=${sportid}&SportComplexId=${complexId}`,
+        `${ip}/gettimeslotforguest?sportId=${sportid}&SportComplexId=${complexId}`,
         requestOptions
       )
         .then((response) => response.json())

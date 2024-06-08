@@ -87,7 +87,7 @@ function ViewComplaint({ route, navigation }) {
               height: 120,
               marginHorizontal: 15,
             }}
-            source={{ uri: `http://${ip}:9999/complaints/${data.photo}` }}
+            source={{ uri: `${ip}/complaints/${data.photo}` }}
           />
         </View>
         <View style={styles.card2}>

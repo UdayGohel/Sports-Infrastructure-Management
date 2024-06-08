@@ -51,7 +51,7 @@ const Main = ({ navigation }) => {
     };
 
     fetch(
-      `http://${ip}:9999/getAthleteswithpaymentswithsupervisor?userId=${UserData._id}`,
+      `${ip}/getAthleteswithpaymentswithsupervisor?userId=${UserData._id}`,
       requestOptions
     )
       .then((response) => response.json())

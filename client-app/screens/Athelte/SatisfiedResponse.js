@@ -56,10 +56,7 @@ const SatisfiedResponse = (props) => {
       redirect: "follow",
     };
 
-    fetch(
-      `http://${ip}:9999/updateComplaintAthleteResponse/${props.cid}`,
-      requestOptions
-    )
+    fetch(`${ip}/updateComplaintAthleteResponse/${props.cid}`, requestOptions)
       .then((response) => response.json())
       .then((result) => {
         console.log("satisfied entry done");

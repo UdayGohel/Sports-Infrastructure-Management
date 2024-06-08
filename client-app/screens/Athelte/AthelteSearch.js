@@ -89,7 +89,7 @@ const AthelteSearch = ({ navigation, route }) => {
         redirect: "follow",
       };
       fetch(
-        `http://${ip}:9999/getUpdatesForAthlete?sportComplexId=${Athelte[0]?.createdBy?.SportComplexId}&active=1`,
+        `${ip}/getUpdatesForAthlete?sportComplexId=${Athelte[0]?.createdBy?.SportComplexId}&active=1`,
         requestOptions
       )
         .then((response) => response.json())

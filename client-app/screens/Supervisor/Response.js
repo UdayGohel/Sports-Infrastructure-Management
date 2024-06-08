@@ -29,7 +29,7 @@ const Response = () => {
   //       redirect: "follow",
   //     };
   //     fetch(
-  //       `http://${ip}:9999/ratingForSupervisor?sportComplexId=${Userdata.SportComplexId}`,
+  //       `${ip}/ratingForSupervisor?sportComplexId=${Userdata.SportComplexId}`,
   //       requestOptions
   //     )
   //       .then((response) => response.json())

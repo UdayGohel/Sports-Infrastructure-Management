@@ -47,7 +47,7 @@ const CustomNotification = ({ navigation }) => {
     };
 
     fetch(
-      `http://${ip}:9999/getAtheleteIdFromPayment?sports=${selectedsport}&instructorId=${instructorid}`,
+      `${ip}/getAtheleteIdFromPayment?sports=${selectedsport}&instructorId=${instructorid}`,
       requestOptions
     )
       .then((response) => response.json())
@@ -62,7 +62,7 @@ const CustomNotification = ({ navigation }) => {
       };
 
       fetch(
-        `http://${ip}:9999/getInstructorswithsport?userId=${Userdata._id}`,
+        `${ip}/getInstructorswithsport?userId=${Userdata._id}`,
         requestOptions
       )
         .then((response) => response.json())

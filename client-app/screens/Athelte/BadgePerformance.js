@@ -90,7 +90,7 @@ const BadgePerformance = () => {
     };
 
     fetch(
-      `http://${ip}:9999/getAthletesWithAllSportsRating?athleteid=${Atheltedata[0]._id}&userid=${Userdata._id}`,
+      `${ip}/getAthletesWithAllSportsRating?athleteid=${Atheltedata[0]._id}&userid=${Userdata._id}`,
       requestOptions
     )
       .then((response) => response.json())
@@ -224,7 +224,7 @@ const BadgePerformance = () => {
         <View style={styles.middleContainer}>
           <Image
             source={badge(sportpoints)}
-            // source={{ uri: `http://${ip}:9999/${userData.baseUrl.slice(1)}` }}
+            // source={{ uri: `${ip}/${userData.baseUrl.slice(1)}` }}
             style={styles.middleImage}
             resizeMode="cover"
           />
@@ -248,7 +248,7 @@ const BadgePerformance = () => {
             source={{
               uri:
                 sportid.rating !== 0
-                  ? `http://${ip}:9999/athelteperformance/${Atheltedata[0]._id}/${sportid.sports._id}`
+                  ? `${ip}/athelteperformance/${Atheltedata[0]._id}/${sportid.sports._id}`
                   : "",
             }}
           />

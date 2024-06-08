@@ -41,7 +41,7 @@ const Login = ({ navigation }) => {
       redirect: "follow",
     };
 
-    fetch(`http://${ip}:9999/login`, requestOptions)
+    fetch(`${ip}/login`, requestOptions)
       .then((response) => response.json())
       .then((result) => {
         if (result.rcode === 200) {

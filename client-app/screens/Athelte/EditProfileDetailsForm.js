@@ -77,10 +77,7 @@ const EditProfileDetailsForm = ({ navigation }) => {
       redirect: "follow",
     };
 
-    fetch(
-      `http://${ip}:9999/updateAthlete/${AthelteData[0]._id}`,
-      requestOptions
-    )
+    fetch(`${ip}/updateAthlete/${AthelteData[0]._id}`, requestOptions)
       .then((response) => response.json())
       .then((result) => {
         if (result.rcode == 200) {
@@ -138,7 +135,7 @@ const EditProfileDetailsForm = ({ navigation }) => {
   //         redirect: "follow",
   //     };
 
-  //     let res = await fetch(`http://${ip}:9999/signup`, requestOptions);
+  //     let res = await fetch(`${ip}/signup`, requestOptions);
   //     let data = await res.json();
   //     if (data.rcode == 200) {
   //         // let photoTo = fdata.photo.split("/");
@@ -151,7 +148,7 @@ const EditProfileDetailsForm = ({ navigation }) => {
   //         //   to: photoTo,
   //         // });
   //         let response = await FileSystem.uploadAsync(
-  //             `http://${ip}:9999/uploadPhoto`,
+  //             `${ip}/uploadPhoto`,
   //             fdata.photo,
   //             {
   //                 fieldName: "photo",

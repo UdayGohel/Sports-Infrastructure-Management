@@ -47,7 +47,7 @@ const SportwiseLeaderBoard = ({ navigation }) => {
       redirect: "follow",
     };
 
-    fetch(`http://${ip}:9999/getSports`, requestOptions)
+    fetch(`${ip}/getSports`, requestOptions)
       .then((response) => response.json())
       .then((result) => {
         setSports(result.data);
@@ -55,7 +55,7 @@ const SportwiseLeaderBoard = ({ navigation }) => {
       .catch((error) => console.log("error", error));
 
     fetch(
-      `http://${ip}:9999/getAthletesWithRating?sportId=${selectedSportsOption}`,
+      `${ip}/getAthletesWithRating?sportId=${selectedSportsOption}`,
       requestOptions
     )
       .then((response) => response.json())
@@ -63,7 +63,7 @@ const SportwiseLeaderBoard = ({ navigation }) => {
         setuserdata(result.currentuserdata);
         let temp = result.data1.map((item) => {
           let iconUrl = item.iconUrl.slice(1);
-          return { ...item, iconUrl: `http://${ip}:9999/${iconUrl}` };
+          return { ...item, iconUrl: `${ip}/${iconUrl}` };
         });
         setatheltedata(temp);
       })

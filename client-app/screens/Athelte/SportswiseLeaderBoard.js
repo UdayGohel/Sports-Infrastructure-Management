@@ -57,7 +57,7 @@ const SportwiseLeaderBoard = ({ navigation }) => {
       redirect: "follow",
     };
 
-    fetch(`http://${ip}:9999/getSports`, requestOptions)
+    fetch(`${ip}/getSports`, requestOptions)
       .then((response) => response.json())
       .then((result) => {
         setSports(result.data);
@@ -65,7 +65,7 @@ const SportwiseLeaderBoard = ({ navigation }) => {
       .catch((error) => console.log("error", error));
 
     fetch(
-      `http://${ip}:9999/getAthletesWithRating?id=${AthelteData[0]._id}&sportId=${selectedSportsOption}`,
+      `${ip}/getAthletesWithRating?id=${AthelteData[0]._id}&sportId=${selectedSportsOption}`,
       requestOptions
     )
       .then((response) => response.json())
@@ -73,7 +73,7 @@ const SportwiseLeaderBoard = ({ navigation }) => {
         setuserdata(result.currentuserdata);
         let temp = result.data1.map((item) => {
           let iconUrl = item.iconUrl.slice(1);
-          return { ...item, iconUrl: `http://${ip}:9999/${iconUrl}` };
+          return { ...item, iconUrl: `${ip}/${iconUrl}` };
         });
         setatheltedata(temp);
         setLoading(false);
@@ -152,7 +152,7 @@ const SportwiseLeaderBoard = ({ navigation }) => {
                   borderColor: "#fbe8e0",
                   borderWidth: 5,
                 }}
-                source={{ uri: `http://${ip}:9999/${image}` }}
+                source={{ uri: `${ip}/${image}` }}
               />
             </View>
             <Text style={styles.label}>

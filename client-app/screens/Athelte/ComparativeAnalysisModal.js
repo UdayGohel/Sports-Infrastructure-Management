@@ -41,7 +41,7 @@ const ComparativeAnalysisModal = (props) => {
           }}
           source={{
             uri: true
-              ? `http://${ip}:9999/comparativeathelteperformance/${props.currentathelteid}/${props.opponentathelteid}/${props.sportid}`
+              ? `${ip}/comparativeathelteperformance/${props.currentathelteid}/${props.opponentathelteid}/${props.sportid}`
               : "",
           }}
         />

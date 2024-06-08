@@ -49,10 +49,7 @@ export default function QR({ navigation }) {
         redirect: "follow",
       };
 
-      fetch(
-        `http://${ip}:9999/getSportsComplex?_id=${complexId}`,
-        requestOptions
-      )
+      fetch(`${ip}/getSportsComplex?_id=${complexId}`, requestOptions)
         .then((response) => response.json())
         .then((result) => {
           // console.log(result);
@@ -127,7 +124,7 @@ export default function QR({ navigation }) {
         redirect: "follow",
       };
 
-      fetch(`http://${ip}:9999/addSession/${data}`, requestOptions)
+      fetch(`${ip}/addSession/${data}`, requestOptions)
         .then((response) => response.json())
         .then((result) => {
           if (result.rcode == 200) {
@@ -186,7 +183,7 @@ export default function QR({ navigation }) {
       };
 
       fetch(
-        `http://${ip}:9999/getAthleteswithsupervisor?userId=${userdata._id}`,
+        `${ip}/getAthleteswithsupervisor?userId=${userdata._id}`,
         requestOptions
       )
         .then((response) => response.json())

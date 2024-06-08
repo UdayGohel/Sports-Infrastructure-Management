@@ -120,7 +120,7 @@ const Bookslotdetails = ({ navigation, route }) => {
       redirect: "follow",
     };
 
-    fetch(`http://${ip}:9999/addGuest`, requestOptions)
+    fetch(`${ip}/addGuest`, requestOptions)
       .then((response) => response.json())
       .then((result) => console.log(result))
       .catch((error) => console.log("error", error));
@@ -177,10 +177,7 @@ const Bookslotdetails = ({ navigation, route }) => {
       redirect: "follow",
     };
 
-    const data = await fetch(
-      `http://${ip}:9999/onlinepayment/intent`,
-      requestOptions
-    );
+    const data = await fetch(`${ip}/onlinepayment/intent`, requestOptions);
     const response = await data.json();
     if (response.error) {
       Alert.alert("Something went wrong", response.error);

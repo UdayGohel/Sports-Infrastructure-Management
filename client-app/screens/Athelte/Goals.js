@@ -45,7 +45,7 @@ const Goals = () => {
     };
 
     fetch(
-      `http://${ip}:9999/getAthleteWithGoals?_id=${_id}&achieved=${achieved}`,
+      `${ip}/getAthleteWithGoals?_id=${_id}&achieved=${achieved}`,
       requestOptions
     )
       .then((response) => response.json())

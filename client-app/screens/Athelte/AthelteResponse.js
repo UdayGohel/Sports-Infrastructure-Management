@@ -73,7 +73,7 @@ const AthleteResponse = ({ route }) => {
     };
 
     fetch(
-      `http://${ip}:9999/getPaymentDetailswithsportwithinstructor?athleteId=${Athelte[0]._id}`,
+      `${ip}/getPaymentDetailswithsportwithinstructor?athleteId=${Athelte[0]._id}`,
       requestOptions
     )
       .then((response) => response.json())
@@ -119,7 +119,7 @@ const AthleteResponse = ({ route }) => {
     };
 
     fetch(
-      `http://${ip}:9999/updateSportsInSession?_id=${enrollid}&sportscomplex=${SportComplexId}`,
+      `${ip}/updateSportsInSession?_id=${enrollid}&sportscomplex=${SportComplexId}`,
       requestOptions
     )
       .then((response) => response.json())
@@ -151,7 +151,7 @@ const AthleteResponse = ({ route }) => {
         redirect: "follow",
       };
 
-      fetch(`http://${ip}:9999/remarkRatingByAthlete`, requestOptions)
+      fetch(`${ip}/remarkRatingByAthlete`, requestOptions)
         .then((response) => response.text())
         .then((result) => {})
         .catch((error) => console.log("error", error));

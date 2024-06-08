@@ -42,7 +42,7 @@ const GeneralComplexDetailsScreen = ({ navigation, route }) => {
     };
 
     fetch(
-      `http://${ip}:9999/sportsComplexDetail?sportsComplex=${data.item._id}`,
+      `${ip}/sportsComplexDetail?sportsComplex=${data.item._id}`,
       requestOptions
     )
       .then((response) => response.json())
@@ -99,7 +99,7 @@ const GeneralComplexDetailsScreen = ({ navigation, route }) => {
             height: screenWidth * 0.5,
           }}
           source={{
-            uri: `http://${ip}:9999${data.item.picture}`,
+            uri: `${ip}${data.item.picture}`,
           }}
         >
           <View style={styles.header}>

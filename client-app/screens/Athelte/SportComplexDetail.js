@@ -44,7 +44,7 @@ const SportComplexDetail = () => {
       method: "GET",
       redirect: "follow",
     };
-    fetch(`http://${ip}:9999/getSportsComplex?_id=${complexId}`, requestOptions)
+    fetch(`${ip}/getSportsComplex?_id=${complexId}`, requestOptions)
       .then((response) => response.json())
       .then((result) => {
         console.log(result.data[0]);
@@ -53,7 +53,7 @@ const SportComplexDetail = () => {
       .catch((error) => console.log("error", error));
 
     fetch(
-      `http://${ip}:9999/sportsComplexDetail?sportsComplex=${complexId}`,
+      `${ip}/sportsComplexDetail?sportsComplex=${complexId}`,
       requestOptions
     )
       .then((response) => response.json())
@@ -112,7 +112,7 @@ const SportComplexDetail = () => {
               height: screenWidth * 0.5,
             }}
             source={{
-              uri: `http://${ip}:9999${details.picture}`,
+              uri: `${ip}${details.picture}`,
             }}
           >
             <View style={styles.header}>

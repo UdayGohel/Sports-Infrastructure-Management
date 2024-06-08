@@ -60,7 +60,7 @@ const AddGoals = ({ navigation }) => {
       redirect: "follow",
     };
 
-    fetch(`http://${ip}:9999/goalOfAthlete?id=${_id}`, requestOptions)
+    fetch(`${ip}/goalOfAthlete?id=${_id}`, requestOptions)
       .then((response) => response.text())
       .then((result) => {
         Alert.alert("Goal Added", "Goal Added Successfully", [

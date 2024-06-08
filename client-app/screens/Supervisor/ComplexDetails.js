@@ -32,7 +32,7 @@ const ComplexDetails = ({ navigation }) => {
     };
 
     fetch(
-      `http://${ip}:9999/sportsComplexDetail?sportsComplex=${complexId}`,
+      `${ip}/sportsComplexDetail?sportsComplex=${complexId}`,
       requestOptions
     )
       .then((response) => response.json())
@@ -42,7 +42,7 @@ const ComplexDetails = ({ navigation }) => {
         setLoading(true);
       });
 
-    fetch(`http://${ip}:9999/getSportsComplex?_id=${complexId}`, requestOptions)
+    fetch(`${ip}/getSportsComplex?_id=${complexId}`, requestOptions)
       .then((response) => response.json())
       .then((result) => {
         setDetails(result.data[0]);

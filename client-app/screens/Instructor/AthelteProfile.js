@@ -90,7 +90,7 @@ const AthelteProfile = ({ route, navigation }) => {
               borderColor: "#fbe8e0",
               borderWidth: 5,
             }}
-            source={{ uri: `http://${ip}:9999/${image}` }}
+            source={{ uri: `${ip}/${image}` }}
           />
         </View>
         <View>

@@ -26,7 +26,7 @@ const RatingModal = (props) => {
   //       body: raw,
   //       redirect: "follow",
   //     };
-  //     fetch(`http://${ip}:9999/ratingBySupervisor`, requestOptions)
+  //     fetch(`${ip}/ratingBySupervisor`, requestOptions)
   //       .then((response) => response.text())
   //       .then((result) => {
   //         alert("DONE");
