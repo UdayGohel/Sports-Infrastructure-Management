@@ -15,8 +15,7 @@ import {
 import ipconfig from "../../ipconfig";
 function renderCategoryItem(itemData, ip, navigate) {
   if (itemData.item.baseUrl) {
-    const image = itemData.item.baseUrl;
-    const updatedImage = image.replace("localhost", ip); // Replace "localhost" with the IP address
+    const updatedImage = itemData.item.baseUrl; // Replace "localhost" with the IP address
     const itemDataWithoutSeparators = { ...itemData }; // Create a copy of itemData
     delete itemDataWithoutSeparators.separators;
     return (
@@ -35,7 +34,7 @@ function renderCategoryItem(itemData, ip, navigate) {
         >
           {/* <View style={[styles.innerContainer]}> */}
           <ImageBackground
-            source={{ uri: updatedImage }}
+            source={{ uri: `${ip}${updatedImage}` }}
             style={styles.imageBackground}
           ></ImageBackground>
           {/* <View> */}

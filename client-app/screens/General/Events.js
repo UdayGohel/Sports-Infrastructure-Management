@@ -67,7 +67,7 @@ const Events = ({ navigation }) => {
               <Image
                 style={styles.eventImage}
                 source={{
-                  uri: item.image.replace("localhost", ip),
+                  uri: `${ip}${item.image}`,
                 }}
               />
               {/* </View> */}

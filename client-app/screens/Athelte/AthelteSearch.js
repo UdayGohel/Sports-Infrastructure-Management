@@ -101,7 +101,7 @@ const AthelteSearch = ({ navigation, route }) => {
   }, [Athelte]);
 
   const renderItem = ({ item, index }, parallaxProps) => {
-    const updatedImage = item.image.replace("localhost", ip);
+    const updatedImage = item.image;
 
     return (
       <TouchableOpacity
@@ -111,7 +111,7 @@ const AthelteSearch = ({ navigation, route }) => {
       >
         <View style={styles.item}>
           <ParallaxImage
-            source={{ uri: updatedImage }}
+            source={{ uri: `${ip}${updatedImage}` }}
             containerStyle={styles.imageContainer}
             style={styles.image}
             parallaxFactor={0.4}

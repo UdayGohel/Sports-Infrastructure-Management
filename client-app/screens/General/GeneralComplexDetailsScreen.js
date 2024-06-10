@@ -76,12 +76,11 @@ const GeneralComplexDetailsScreen = ({ navigation, route }) => {
     carouselRef.current.snapToNext();
   };
   const renderItem = ({ item, index }, parallaxProps) => {
-    const updatedImage = item.replace("localhost", ip);
     // console.log(updatedImage);
     return (
       <View style={styles.item}>
         <ParallaxImage
-          source={{ uri: updatedImage }}
+          source={{ uri: `${ip}${item}` }}
           containerStyle={styles.imageContainer}
           style={styles.image}
           parallaxFactor={0.4}
