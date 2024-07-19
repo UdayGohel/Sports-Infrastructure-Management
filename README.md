@@ -10,14 +10,11 @@ This project, developed during the SSIP Hackathon using the MERN stack and React
 
 - [About the Project](#-about-the-project)
 - [Built With](#-built-with)
-- [Getting Started](#-getting-started)
+- [Getting Started](#getting-started)
   - [App Features](#-app-features)
-  - [App Installation](#app-installation)
-  - [Web Features](#web-features)
-  - [Web Installations](#web-installations)
-- [Usage](#usage)
-- [Features](#features)
-- [Contributing](#contributing)
+  - [Web Features](#-web-features)
+  - [All Installations](#installation)
+- [Contributing](#contributors)
   
 ## 🎯 About the Project
 
