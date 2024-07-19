@@ -11,10 +11,10 @@ This project, developed during the SSIP Hackathon using the MERN stack and React
 - [About the Project](#about-the-project)
 - [Built With](#built-with)
 - [Getting Started](#getting-started)
-  - [App Features](#appFeatures)
-  - [App Installation](#appInstallation)
-  - [Web Features](#webFeatures)
-  - [Web Installations](#webInstallation)
+  - [App Features](#app-features)
+  - [App Installation](#app-installation)
+  - [Web Features](#web-features)
+  - [Web Installations](#web-installations)
 - [Usage](#usage)
 - [Features](#features)
 - [Contributing](#contributing)
@@ -55,6 +55,21 @@ This system's mission is two-fold: to empower athletes by providing unprecedente
 - 🏆 **Sport-wise Leaderboard:** Track and display athlete performance in different sports.
 - 📅 **Daily Athlete Response:** Monitor and record daily responses from athletes.
 
+#### Glimps of Application
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/38dbf67c-9d50-4f84-bc9d-aef0664b9fcc" width="300" alt="login-page"/>
+  <img src="https://github.com/user-attachments/assets/29cdbd25-7660-4edd-a48c-8746c86349d2" width="300" alt="register-page"/>
+</p>
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/defc0b05-55d9-47e9-af56-85ccd36e69b7" width="300" alt="supervisor-detail"/>
+  <img src="https://github.com/user-attachments/assets/95aeeb6a-a9ea-434b-9f7f-e4f89d7227af" width="300" alt=""main-page/>
+</p>
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/e713b410-0c69-4c7b-ba32-ecbbb58e8e13" width="300" alt="goal-listed"/>
+  <img src="https://github.com/user-attachments/assets/d5bd1fd8-4250-400d-85b9-a35c6e9b69fe" width="300" alt="complaint-page"/>
+</p>
+
 ### 💻 Web Features
 
 #### For Owners/Managers:
@@ -84,3 +99,90 @@ This system's mission is two-fold: to empower athletes by providing unprecedente
 - 🚨 **Issue Handling:** Handle escalated issues and disputes.
 - ✔️ **Regulation Compliance:** Ensure compliance with state-level regulations and standards.
 
+#### Glimps of Website
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/8358f5d2-7eb2-43a5-b2a8-34af3133ef0d"/>
+</p>
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/de2d73f2-37a2-4a10-ba21-f6a023f0f6c8"/>
+</p>
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/e8607b70-eab5-4f38-a21a-598c91b860a1"/>
+</p>
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/7f0f877c-67e9-469d-851e-9424940fcc49"/>
+</p>
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/ddbe137d-0f93-4238-9b60-b686c7dff02c"/>
+</p>
+
+
+### Installation
+1. **Clone the Repository:**
+
+    ```bash
+    https://github.com/UdayGohel/Sports-Infrastructure-Management.git
+    ```
+
+2. **Navigate to Project Directory:**
+
+    ```bash
+    cd Sports-Infrastructure-Management
+    ```
+
+3. **Install Dependencies for Back-end:**
+
+    ```bash
+    npm install
+    ```
+
+4. **Run the Application for Back-end (Express or Node.js server):**
+
+    ```bash
+    npm start
+    ```
+
+5. **Navigate to Client-web Project Directory:**
+
+    ```bash
+    cd client-web
+    ```
+    
+6. **Install Dependencies for Front-end:**
+
+    ```bash
+    npm install
+    ```
+    
+7. **Run the Application for Front-end (ReactJS):**
+
+    ```bash
+    npm start
+    ```
+    
+8. **Navigate to Client-app Project Directory:**
+
+    ```bash
+    cd client-app
+    ```
+    
+9. **Install Dependencies for Application:**
+
+    ```bash
+    npm install
+    ```
+      
+10. **Run the Application:**
+
+    ```bash
+      npx expo start 
+    ```
+
+
+### Contributors
+
+- [_Devam Doshi_](https://github.com/devamdoshi212)
+- [_Uday Gohel_](https://github.com/UdayGohel)
+- [_Dhruv Shah_](https://github.com/dhruvsharma1999)
+- [_Ritesh Mandaviya_](https://github.com/Ritesh0604)
